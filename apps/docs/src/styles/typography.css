@@ -1,0 +1,9 @@
+/*
+ * This file is responsible for importing Tailwind CSS 
+ * and any other ui library styles only to be used in the
+ * ui library.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

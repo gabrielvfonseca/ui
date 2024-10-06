@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './colors.css';
+@import './typography.css';
+
+:root {
+    --selection: hsl(216, 100%, 45%);
+    --selection-text: hsl(216, 100%, 97%);
+}
+
+@layer base {
+    :host, html, html body {
+        @apply font-sans bg-background-200;
+    }
+    
+    ::selection {
+        background-color: var(--selection);
+        color: var(--selection-text);
+    }
+}
