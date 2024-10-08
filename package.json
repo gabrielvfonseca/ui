@@ -19,15 +19,8 @@
   "name": "ui",
   "packageManager": "yarn@1.22.19",
   "workspaces": [
-    "ui",
     "apps/*",
-    "packages/*"
-  ],
-  "dependencies": {
-    "@vercel/analytics": "^1.3.1",
-    "concurrently": "^9.0.1",
-    "mdast-util-toc": "^7.1.0",
-    "next-themes": "^0.3.0",
-    "remark": "^15.0.1"
-  }
+    "packages/*",
+    "ui"
+  ]
 }

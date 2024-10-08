@@ -1,40 +1,11 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@repo/ui/utils/cn";
 import { siteConfig } from "@config/site";
-import { useMediaQuery } from "@hooks/use-media-query";
-import { buttonVariants } from "../../../../../ui/src/components/button";
-
-export type NavItem = {
-  title: string
-  href: string
-  disabled?: boolean
-}
-
-export type MainNavItem = NavItem
-
-export type SidebarNavItem = {
-  title: string
-  disabled?: boolean
-  external?: boolean
-  icon?: any;
-} & (
-  | {
-      href: string
-      items?: never
-    }
-  | {
-      href?: string
-      items: NavLink[]
-    }
-)
-
-export interface DocsSidebarNavProps {
-  items: SidebarNavItem[]
-}
+import { DocsSidebarNavItemsProps, DocsSidebarNavProps } from "@types/index";
 
 export function Sidebar ({ items }: DocsSidebarNavProps) {
   const pathname = usePathname();
@@ -74,11 +45,6 @@ export function Sidebar ({ items }: DocsSidebarNavProps) {
       </nav>
     </>
   )
-}
-
-interface DocsSidebarNavItemsProps {
-  items: SidebarNavItem[]
-  pathname: string | null
 }
 
 export function DocsSidebarNavItems({

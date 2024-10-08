@@ -34,7 +34,7 @@ export default function LayoutPanels ({
     if (!isDesktop) {
         return (
             <>
-                <PageHeader />
+                <PageHeader items={docsConfig.sidebarNav} />
                 {children}
             </>
         );
@@ -68,7 +68,7 @@ export default function LayoutPanels ({
                 height='100%' 
                 overflow='y'
             >
-                <PageHeader />
+                <PageHeader items={docsConfig.sidebarNav} />
                 {children}
             </Scroller>
             </ResizablePanel>

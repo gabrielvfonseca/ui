@@ -12,10 +12,15 @@ import { useMediaQuery } from '@hooks/use-media-query';
 import OverlayMenu from '@components/overlays/overlay-menu';
 import ModalFeedback from '../overlays/modal-feedback';
 
-interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {};
+import { SidebarNavItem } from '@types/index';
+
+interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+  items: SidebarNavItem[];
+};
 
 export function PageHeader ({
   className,
+  items,
   ...props
 }: HeaderProps) {
   const isDesktop = useMediaQuery('(min-width: 1068px)');
@@ -36,7 +41,11 @@ export function PageHeader ({
         {
           isDesktop ?
             <> 
-              <div>Search</div>
+              <OverlayMenu 
+                items={items}
+                type='input'
+                overwrite='dialog'
+              />
 
               <Stack
                 direction='row'
@@ -60,7 +69,10 @@ export function PageHeader ({
               </div>
 
               <div className='border-l border-gray-alpha-400 flex pl-4 items-center h-full'>
-                <OverlayMenu />
+                <OverlayMenu 
+                  items={items} 
+                  type='button'
+                />
               </div>
             </>
         }

@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 // Site Config
 import { siteConfig } from '@config/site';
+import { ThemeToggle } from './theme-toggle';
 
 // Footer JSX Component
 export const PageFooter = () => (
@@ -58,6 +59,8 @@ export const PageFooter = () => (
                 </Link>
                 {'. All rights reserved.'}
             </p>
+
+            <ThemeToggle />
         </div>
     </footer>
 );
